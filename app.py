@@ -1,7 +1,8 @@
 from flask import Flask, render_template, request, redirect, url_for
 import os
 import uuid
-
+import metacall
+from HomePage.tsx import HomePage
 app = Flask(__name__)
 UPLOAD_FOLDER = 'uploads' 
 
@@ -9,6 +10,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # List to store file paths
 uploaded_files = []
+HomePage()
 
 @app.route('/files')
 def files():
@@ -36,14 +38,16 @@ def preview():
             css = css_file.read()
             combined_html = f'<style>{css}</style>{html}'
 
-        return render_template('preview.html', combined_html=combined_html)
+        return render_template('review.html', combined_html=combined_html)
 
     return '''
+
         <form method="POST" enctype="multipart/form-data">
             <input type="file" name="html" accept=".html">
             <input type="file" name="css" accept=".css">
             <input type="submit" value="Preview">
         </form>
+
     '''
 
 

@@ -11,6 +11,8 @@ import MacBookAir7 from "./newPreviewPage";
 const fileTypeHtml = ["HTML"];
 const fileTypeCss = ["CSS"];
 
+
+
 const HomePage: FunctionComponent = () => {
   const [fileHTML, setFileHTML] = useState<any>(null);
   const [fileCSS, setFileCSS] = useState<any>(null);
@@ -59,6 +61,7 @@ const HomePage: FunctionComponent = () => {
   }
   return (
     <div className="relative bg-snow w-full overflow-hidden flex flex-col py-[41px] px-[138px] box-border items-center justify-center text-center text-[12.84px] text-dimgray font-rubik">
+      <script></script>
       <div className="overflow-hidden flex flex-col items-center justify-center gap-[55px]">
         <div className="overflow-hidden flex flex-col py-0 px-px items-center justify-center">
           <img
